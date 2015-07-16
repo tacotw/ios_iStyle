@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Collage.h"
-#import "SelectPhotoViewController.h"
-@interface MainViewController : UIViewController<SelectPhotoViewControllerDelegate>
+#import "SearchViewController.h"
+@interface MainViewController : UIViewController <SearchViewControllerDelegate>
 @property (nonatomic, strong) Collage *collage;
 
 @end

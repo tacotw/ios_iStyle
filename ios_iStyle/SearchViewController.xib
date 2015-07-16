@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController">
+            <connections>
+                <outlet property="bottomBarItem" destination="0F7-Ui-gl6" id="jZR-FU-w27"/>
+                <outlet property="collectionView" destination="9rN-MV-uwv" id="Xbm-qU-9d5"/>
+                <outlet property="hatBarItem" destination="OVw-xm-1dr" id="0Ty-gV-U8r"/>
+                <outlet property="maskView" destination="kqh-RG-jVP" id="Nmx-6C-MYA"/>
+                <outlet property="rightButton" destination="eRo-cm-7jF" id="hgP-gG-z7n"/>
+                <outlet property="searchBar" destination="JaR-K8-qM5" id="bit-v3-9Yl"/>
+                <outlet property="searchDisplayController" destination="eFY-FG-k52" id="NmK-9w-c78"/>
+                <outlet property="shoesBarItem" destination="c8P-Ha-Alp" id="1gh-uE-lPT"/>
+                <outlet property="tabBar" destination="o8A-fN-Zgd" id="ezp-9l-x8e"/>
+                <outlet property="topBarItem" destination="LuP-fP-gwR" id="Eu5-Jn-ILd"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBV-sf-cqk">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="cGZ-Zz-2fd"/>
+                    </constraints>
+                    <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <items>
+                        <navigationItem id="FSV-gr-xNZ"/>
+                    </items>
+                </navigationBar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03J-5O-MWc">
+                    <rect key="frame" x="0.0" y="16" width="320" height="44"/>
+                    <subviews>
+                        <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="JaR-K8-qM5">
+                            <rect key="frame" x="0.0" y="0.0" width="278" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="YVS-7W-blr"/>
+                            </constraints>
+                            <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRo-cm-7jF">
+                            <rect key="frame" x="282" y="8" width="30" height="28"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="OK">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="onRightButton:" destination="-1" eventType="touchUpInside" id="nh1-XL-4zy"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="eRo-cm-7jF" secondAttribute="trailing" constant="8" id="1To-1e-UKw"/>
+                        <constraint firstItem="JaR-K8-qM5" firstAttribute="top" secondItem="03J-5O-MWc" secondAttribute="top" id="aeM-83-wNf"/>
+                        <constraint firstItem="eRo-cm-7jF" firstAttribute="top" secondItem="03J-5O-MWc" secondAttribute="top" constant="8" id="fsp-4A-qUx"/>
+                        <constraint firstItem="JaR-K8-qM5" firstAttribute="leading" secondItem="03J-5O-MWc" secondAttribute="leading" id="lS0-Bi-Lqb"/>
+                        <constraint firstItem="eRo-cm-7jF" firstAttribute="leading" secondItem="JaR-K8-qM5" secondAttribute="trailing" constant="4" id="nUT-zW-r3i"/>
+                        <constraint firstAttribute="height" constant="44" id="sOH-fA-2SJ"/>
+                        <constraint firstAttribute="bottom" secondItem="eRo-cm-7jF" secondAttribute="bottom" constant="8" id="sW8-Nm-Zv6"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9rN-MV-uwv">
+                    <rect key="frame" x="0.0" y="60" width="320" height="508"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QGW-dh-lTS">
+                        <size key="itemSize" width="145" height="145"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="10" minY="8" maxX="10" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o8A-fN-Zgd">
+                    <rect key="frame" x="0.0" y="519" width="320" height="49"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="5ad-lT-niK"/>
+                    </constraints>
+                    <items>
+                        <tabBarItem title="Top" image="top24" id="LuP-fP-gwR"/>
+                        <tabBarItem title="Bottom" image="bottom24" id="0F7-Ui-gl6"/>
+                        <tabBarItem title="Hat" image="hat24" id="OVw-xm-1dr"/>
+                        <tabBarItem title="Shoes" image="shoes24" id="c8P-Ha-Alp"/>
+                    </items>
+                    <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                </tabBar>
+                <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kqh-RG-jVP" userLabel="MaskView">
+                    <rect key="frame" x="0.0" y="60" width="320" height="459"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="lGe-ot-eaq" appends="YES" id="Grm-Yl-35Z"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="PBV-sf-cqk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0j7-2c-7TA"/>
+                <constraint firstItem="9rN-MV-uwv" firstAttribute="top" secondItem="03J-5O-MWc" secondAttribute="bottom" id="F9A-Es-ZNc"/>
+                <constraint firstAttribute="bottom" secondItem="9rN-MV-uwv" secondAttribute="bottom" id="HqP-tn-hhM"/>
+                <constraint firstAttribute="trailing" secondItem="o8A-fN-Zgd" secondAttribute="trailing" id="Mgg-hM-JgE"/>
+                <constraint firstItem="03J-5O-MWc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="N5c-i4-cht"/>
+                <constraint firstAttribute="bottom" secondItem="o8A-fN-Zgd" secondAttribute="bottom" id="Pgv-e1-CP0"/>
+                <constraint firstAttribute="trailing" secondItem="03J-5O-MWc" secondAttribute="trailing" id="Svp-gX-E5C"/>
+                <constraint firstAttribute="trailing" secondItem="9rN-MV-uwv" secondAttribute="trailing" id="fVX-le-Ycx"/>
+                <constraint firstItem="9rN-MV-uwv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hTD-wl-iFy"/>
+                <constraint firstItem="PBV-sf-cqk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="k3t-hB-5Yc"/>
+                <constraint firstItem="03J-5O-MWc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="koH-f1-xUJ"/>
+                <constraint firstAttribute="trailing" secondItem="PBV-sf-cqk" secondAttribute="trailing" id="qAo-rX-Xbf"/>
+                <constraint firstItem="o8A-fN-Zgd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="r7c-xa-bJk"/>
+            </constraints>
+            <point key="canvasLocation" x="236" y="290"/>
+        </view>
+        <searchDisplayController id="vG3-Or-JIR">
+            <connections>
+                <outlet property="delegate" destination="-1" id="0k5-hO-45o"/>
+                <outlet property="searchContentsController" destination="-1" id="V6b-xH-ghf"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="y1n-d0-scc"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="Txk-Ps-p4p"/>
+            </connections>
+        </searchDisplayController>
+        <searchDisplayController id="eFY-FG-k52">
+            <connections>
+                <outlet property="delegate" destination="-1" id="QGu-w1-Qz6"/>
+                <outlet property="searchContentsController" destination="-1" id="Rlu-BS-gj9"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="bv9-ht-Nvg"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="WLj-k0-olU"/>
+            </connections>
+        </searchDisplayController>
+        <tapGestureRecognizer id="lGe-ot-eaq">
+            <connections>
+                <action selector="onTap:" destination="-1" id="iah-ZZ-3Cb"/>
+            </connections>
+        </tapGestureRecognizer>
+        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="YPg-47-oxa">
+            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+        </activityIndicatorView>
+    </objects>
+    <resources>
+        <image name="bottom24" width="24" height="24"/>
+        <image name="hat24" width="24" height="24"/>
+        <image name="shoes24" width="24" height="24"/>
+        <image name="top24" width="24" height="24"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

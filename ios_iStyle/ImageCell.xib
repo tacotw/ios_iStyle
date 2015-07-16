@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="gTV-IL-0wX" customClass="ImageCell">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0CQ-Ed-bXc">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <color key="backgroundColor" red="0.87144886363636354" green="0.87144886363636354" blue="0.87144886363636354" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="200" id="APa-mQ-mg7"/>
+                            <constraint firstAttribute="width" constant="200" id="McU-7Z-1Va"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="APa-mQ-mg7"/>
+                                <exclude reference="McU-7Z-1Va"/>
+                            </mask>
+                        </variation>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="0CQ-Ed-bXc" secondAttribute="centerX" id="0KW-uD-hcU"/>
+                <constraint firstAttribute="bottom" secondItem="0CQ-Ed-bXc" secondAttribute="bottom" id="E4D-gG-yBw"/>
+                <constraint firstItem="0CQ-Ed-bXc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="FBr-9p-3cp"/>
+                <constraint firstAttribute="trailing" secondItem="0CQ-Ed-bXc" secondAttribute="trailing" id="NKC-pc-54r"/>
+                <constraint firstItem="0CQ-Ed-bXc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="b5j-CJ-Kdb"/>
+                <constraint firstAttribute="bottom" secondItem="0CQ-Ed-bXc" secondAttribute="bottom" id="d2R-ps-fWx"/>
+                <constraint firstAttribute="trailing" secondItem="0CQ-Ed-bXc" secondAttribute="trailing" id="f2M-xB-ug3"/>
+                <constraint firstItem="0CQ-Ed-bXc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lTL-ne-kaA"/>
+                <constraint firstItem="0CQ-Ed-bXc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qEd-dt-E5C"/>
+                <constraint firstAttribute="centerY" secondItem="0CQ-Ed-bXc" secondAttribute="centerY" id="wof-hW-aj1"/>
+            </constraints>
+            <size key="customSize" width="125" height="123"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="0KW-uD-hcU"/>
+                    <exclude reference="E4D-gG-yBw"/>
+                    <exclude reference="NKC-pc-54r"/>
+                    <exclude reference="b5j-CJ-Kdb"/>
+                    <exclude reference="lTL-ne-kaA"/>
+                    <exclude reference="wof-hW-aj1"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="imageView" destination="0CQ-Ed-bXc" id="JxA-7u-iXv"/>
+            </connections>
+            <point key="canvasLocation" x="377" y="360"/>
+        </collectionViewCell>
+    </objects>
+</document>

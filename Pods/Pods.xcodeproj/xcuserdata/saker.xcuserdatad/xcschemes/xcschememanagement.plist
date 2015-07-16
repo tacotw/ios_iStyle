@@ -4,7 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-ios_iStyle-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ios_iStyle-SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ios_iStyle-SVPullToRefresh.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>51E8B92C48AA9242B41F2B94</key>
+		<key>11F8C1159D8DD7D59981689B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>69375CEA9EA33A3C9444E359</key>
+		<key>20D80A1CB956848715F47872</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>22FF3D3DB369738EDBE36BE8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6D60C8C8086A8549B4D21392</key>
 		<dict>
 			<key>primary</key>
 			<true/>

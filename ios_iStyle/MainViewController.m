@@ -10,17 +10,21 @@
 #import "CollageElementView.h"
 #import "UIImage+CollagePreview.h"
 #import "UIView+RelativeFrame.h"
+#import <UIImageView+AFNetworking.h>
 #import "UIView+ImageRender.h"
 #import <QuartzCore/CALayer.h>
 #import "SVProgressHUD.h"
-#import "SelectPhotoViewController.h"
-@interface MainViewController ()<UIGestureRecognizerDelegate, SelectPhotoViewControllerDelegate>
+
+#import "SearchViewController.h"
+#import "SearchRecord.h"
+@interface MainViewController ()<UIGestureRecognizerDelegate, SearchViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *centerView;
 @property (weak, nonatomic) IBOutlet UIView *collageView;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (nonatomic, strong) NSArray *collages;
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
-
+@property (nonatomic, strong) NSMutableArray *records;
+@property (nonatomic, strong) NSString *lastsanp;
 @property (nonatomic, weak) CollageElementView *currentCollageElementView;
 @end
 
@@ -75,13 +79,23 @@
     self.collageView.backgroundColor = blueColor;
     self.collageView.layer.cornerRadius = 5.;
     [self.collageView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    self.records = [NSMutableArray array];
     __weak __typeof(self) this = self;
     self.collage = self.collages[0];
     [self.collage enumerateRelativeFramesUsingBlock:^(CGRect relativeFrame, NSUInteger index) {
         [this createCollageElementViewWithRelativeFrame:relativeFrame index:(NSUInteger *)index ];
     }];
+    //NSString * timestamp = [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970] * 1000];
    
-    
+}
+- (NSString *)getTime{
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYY-MM-d_HHmmss"];
+    NSString *correctDate = [formatter stringFromDate:date];
+    NSLog(@"%@",correctDate);
+    return correctDate;
 }
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
@@ -125,8 +139,8 @@
 }
 
 - (void)onExampleCollageTap:(UITapGestureRecognizer *)sender {
-    //NSLog(@"collate click%ld", (long)sender.view.tag);
-   
+    
+    [self.records removeAllObjects];
     [self.collageView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     __weak __typeof(self) this = self;
     self.collage = self.collages[sender.view.tag];
@@ -137,28 +151,30 @@
 }
 
 - (void)createCollageElementViewWithRelativeFrame:(CGRect)relativeFrame index:(NSUInteger *)index{
+    
+    [self.records insertObject:[NSString stringWithFormat:@"%lu",(long)index]  atIndex:(long)index];
     CollageElementView *result = [CollageElementView new];
+    result.tag = (int)index;
     result.relativeFrame = relativeFrame;
     [result addTarget:self action:@selector(onCollageElementTap:) forControlEvents:UIControlEventTouchUpInside];
     [self.collageView addSubview:result];
     [self.collageView.subviews makeObjectsPerformSelector:@selector(refreshFrame)];
+    
 }
 
 - (void)onCollageElementTap:(id)sender {
     self.currentCollageElementView = sender;
-    SelectPhotoViewController *Svc = [[SelectPhotoViewController alloc] init];
-    Svc.Photodelegate = self;
+    SearchViewController *Svc = [[SearchViewController alloc] init];
+    Svc.delegate = self;
     [self presentViewController:Svc animated:YES completion:nil];
 }
-
-- (void)selectPhoto:(UIImage *)image {
-    
-    self.currentCollageElementView.image = image;
-    NSArray *images = [[self.collageView.subviews valueForKey:@"image"] filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
-        return [evaluatedObject isKindOfClass:[UIImage class]];
-    }]];
-    
-    self.navigationItem.rightBarButtonItem.enabled = [self.collage.relativeFrames count] == [images count];
+-(void)getSelectedRecord:(SearchRecord *)record{
+    NSLog(@"%@", record.title);
+     [self.records replaceObjectAtIndex:self.currentCollageElementView.tag withObject:record];
+  //  [self.records insertObject:record  atIndex:self.currentCollageElementView.tag];
+    UIImage *Image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: record.imageUrl]]];
+    self.currentCollageElementView.image = Image;
+    NSLog(@"%@",self.records);
 }
 
 - (void)saveCollage{
@@ -169,11 +185,14 @@
     if( [self.collage.relativeFrames count] == [images count]){
         UIImage *snap = [self.collageView renderImage];
         NSData *imgData = UIImagePNGRepresentation(snap);
-        
-        NSString *newImageName=[self getImagePath:@"screenshot3.png"];
+        NSString *time = [self getTime];
+        NSString *newImageName=[self getImagePath:[NSString stringWithFormat:@"/screenshot/%@.png",time]];
+        NSLog(@"%@", newImageName);
         if(imgData){
+            self.lastsanp = newImageName;
             [imgData writeToFile:newImageName atomically:YES];
             NSLog(@"write success");
+            [self shareContent];
         }else{
             NSLog(@"error while taking screenshot");
         }
@@ -199,6 +218,33 @@
     
     return finalPath;
     
+}
+
+-(void)shareContent{
+    NSMutableArray *messages = [[NSMutableArray alloc] init];
+    for (SearchRecord *record in self.records) {
+       [messages addObject:[NSString stringWithFormat:@"%@ %@", record.title, record.productUrl]];
+        NSLog(@"%@",record.title);
+         NSLog(@"%@",record.productUrl);
+        
+    }
+    /*
+    NSMutableArray *messages = [[NSMutableArray alloc] init];
+    for (SearchRecord *record in self.records) {
+        [messages addObject:[NSString stringWithFormat:@"%@ %@", record.title, record.productUrl]];
+    }
+    
+    UIImage * image = [UIImage imageNamed:@"screenShot"];
+    NSArray * shareItems = @[message , image];
+    */
+   // UIActivityViewController * avc = [[UIActivityViewController alloc] init];
+    NSString *message = [messages componentsJoinedByString:@"\n\r"];
+    UIImage *happyImage = [UIImage imageWithContentsOfFile:self.lastsanp];
+    UIActivityViewController *avc = [[UIActivityViewController alloc] initWithActivityItems:[NSArray arrayWithObjects:message, happyImage, nil] applicationActivities:nil];
+    
+   // [self presentViewController:avc animated:YES completion:nil];
+   
+    [self presentViewController:avc animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
