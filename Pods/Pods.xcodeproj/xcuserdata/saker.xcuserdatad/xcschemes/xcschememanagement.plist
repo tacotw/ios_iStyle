@@ -9,6 +9,31 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-ios_iStyle-DACircularProgress.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ios_iStyle-MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ios_iStyle-MWPhotoBrowser-MWPhotoBrowser.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ios_iStyle-MWPhotoBrowser.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ios_iStyle-SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ios_iStyle-SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +52,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>11F8C1159D8DD7D59981689B</key>
+		<key>3A17CF49B1DF7B706D8DED1B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>20D80A1CB956848715F47872</key>
+		<key>554FC6B47C260DC99CD348D7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>22FF3D3DB369738EDBE36BE8</key>
+		<key>8CDCBEE0FF849765EA144B31</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6D60C8C8086A8549B4D21392</key>
+		<key>9F10D7209E8C038587C01EB5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C6A5EE32C1E1AE149B502317</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D3D613781AFB4F0BAB299BC0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F234B4CD6190D83F033B6DDD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F8954549E2808B3A05DF8609</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FF0C52D5D8D33B01BF59BA09</key>
 		<dict>
 			<key>primary</key>
 			<true/>

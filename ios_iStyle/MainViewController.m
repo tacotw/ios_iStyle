@@ -14,7 +14,7 @@
 #import "UIView+ImageRender.h"
 #import <QuartzCore/CALayer.h>
 #import "SVProgressHUD.h"
-
+#import "RootViewController.h"
 #import "SearchViewController.h"
 #import "SearchRecord.h"
 @interface MainViewController ()<UIGestureRecognizerDelegate, SearchViewControllerDelegate>
@@ -40,10 +40,14 @@
                                                                     style:UIBarButtonItemStyleDone
                                                                     target:nil
                                                                    action:@selector(saveCollage)];
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"Fav"
+                                                                   style:UIBarButtonItemStyleDone
+                                                                  target:nil
+                                                                  action:@selector(showFav)];
+    UINavigationItem *item = [[UINavigationItem alloc] initWithTitle:@"iStyle"];
     
-    
-    UINavigationItem *item = [[UINavigationItem alloc] initWithTitle:@"Title"];
     item.rightBarButtonItem = rightButton;
+    item.leftBarButtonItem = leftButton;
     item.hidesBackButton = YES;
     [self.navBar pushNavigationItem:item animated:NO];
     
@@ -169,14 +173,18 @@
     [self presentViewController:Svc animated:YES completion:nil];
 }
 -(void)getSelectedRecord:(SearchRecord *)record{
-    NSLog(@"%@", record.title);
-     [self.records replaceObjectAtIndex:self.currentCollageElementView.tag withObject:record];
-  //  [self.records insertObject:record  atIndex:self.currentCollageElementView.tag];
+   
+    [self.records replaceObjectAtIndex:self.currentCollageElementView.tag withObject:record];
+   
     UIImage *Image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: record.imageUrl]]];
     self.currentCollageElementView.image = Image;
-    NSLog(@"%@",self.records);
 }
-
+- (void)showFav{
+    
+    RootViewController *Rvc = [[RootViewController alloc] init];
+   
+    [self presentViewController:Rvc animated:YES completion:nil];
+}
 - (void)saveCollage{
     NSArray *images = [[self.collageView.subviews valueForKey:@"image"] filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
         return [evaluatedObject isKindOfClass:[UIImage class]];
@@ -219,6 +227,7 @@
     return finalPath;
     
 }
+
 
 -(void)shareContent{
     NSMutableArray *messages = [[NSMutableArray alloc] init];

@@ -238,6 +238,9 @@
     
     ImageCell *cell = (ImageCell *)[collectionView cellForItemAtIndexPath:indexPath];
     [self setSelectedCellBorder:cell];
+    
+    [self.delegate getSelectedRecord:self.records[self.selectedIndexPath.row]];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)insertRowAtBottom {

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RootViewController">
+            <connections>
+                <outlet property="circleBarItem" destination="SfN-kX-42h" id="Wtz-JW-2fv"/>
+                <outlet property="collectionView" destination="TID-gP-EIp" id="0k0-1b-egI"/>
+                <outlet property="lineBarItem" destination="qQT-49-J6R" id="Yh6-e6-O81"/>
+                <outlet property="stackBarItem" destination="cLF-jR-pdU" id="vZg-yb-BcJ"/>
+                <outlet property="tabBar" destination="TGG-of-RAw" id="Pgp-Z2-IEM"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAy-sf-FHu">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="s2R-u3-43E"/>
+                    </constraints>
+                    <items>
+                        <navigationItem title="Title" id="zOq-OV-UqO"/>
+                    </items>
+                </navigationBar>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="TID-gP-EIp">
+                    <rect key="frame" x="0.0" y="60" width="414" height="627"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9cC-I7-tS1">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TGG-of-RAw">
+                    <rect key="frame" x="0.0" y="687" width="414" height="49"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <items>
+                        <tabBarItem selectedImage="ImageSelectedOn.png" systemItem="favorites" id="qQT-49-J6R"/>
+                        <tabBarItem systemItem="more" id="SfN-kX-42h"/>
+                        <tabBarItem systemItem="history" id="cLF-jR-pdU"/>
+                    </items>
+                </tabBar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="vAy-sf-FHu" secondAttribute="trailing" id="6Nv-xL-uRv"/>
+                <constraint firstItem="vAy-sf-FHu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="L7Z-zm-af4"/>
+                <constraint firstAttribute="bottom" secondItem="TGG-of-RAw" secondAttribute="bottom" id="Nhi-Ce-Dy9"/>
+                <constraint firstAttribute="bottom" secondItem="TGG-of-RAw" secondAttribute="bottom" id="WA0-wA-zZu"/>
+                <constraint firstAttribute="trailing" secondItem="TGG-of-RAw" secondAttribute="trailing" id="lug-6T-CJW"/>
+                <constraint firstItem="vAy-sf-FHu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="rKz-AL-9c4"/>
+                <constraint firstItem="TGG-of-RAw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yj4-33-XvR"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ImageSelectedOn.png" width="44" height="44"/>
+    </resources>
+</document>
