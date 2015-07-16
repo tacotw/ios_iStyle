@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		01542AFE1B53C4220015446B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01542AFD1B53C4220015446B /* main.m */; };
 		01542B011B53C4220015446B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01542B001B53C4220015446B /* AppDelegate.m */; };
-		01542B041B53C4220015446B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01542B031B53C4220015446B /* ViewController.m */; };
-		01542B071B53C4220015446B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01542B051B53C4220015446B /* Main.storyboard */; };
 		01542B091B53C4220015446B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01542B081B53C4220015446B /* Images.xcassets */; };
 		01542B0C1B53C4220015446B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01542B0A1B53C4220015446B /* LaunchScreen.xib */; };
 		01542B181B53C4220015446B /* iStyleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01542B171B53C4220015446B /* iStyleTests.m */; };
+		01542B241B53C5EC0015446B /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01542B221B53C5EC0015446B /* SearchViewController.m */; };
+		01542B251B53C5EC0015446B /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01542B231B53C5EC0015446B /* SearchViewController.xib */; };
+		01542B411B5637880015446B /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01542B3F1B5637880015446B /* ImageCell.m */; };
+		01542B421B5637880015446B /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01542B401B5637880015446B /* ImageCell.xib */; };
+		01542B451B564CF70015446B /* SearchRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 01542B441B564CF70015446B /* SearchRecord.m */; };
+		82E9CFF7A224CBF6E1C596F2 /* libPods-iStyle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BDEF591204C924AA8400D72 /* libPods-iStyle.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +36,22 @@
 		01542AFD1B53C4220015446B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		01542AFF1B53C4220015446B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		01542B001B53C4220015446B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		01542B021B53C4220015446B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		01542B031B53C4220015446B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		01542B061B53C4220015446B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01542B081B53C4220015446B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		01542B0B1B53C4220015446B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		01542B111B53C4220015446B /* iStyleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iStyleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01542B161B53C4220015446B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01542B171B53C4220015446B /* iStyleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iStyleTests.m; sourceTree = "<group>"; };
+		01542B211B53C5EC0015446B /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		01542B221B53C5EC0015446B /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		01542B231B53C5EC0015446B /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		01542B3E1B5637880015446B /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
+		01542B3F1B5637880015446B /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
+		01542B401B5637880015446B /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		01542B431B564CF70015446B /* SearchRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchRecord.h; sourceTree = "<group>"; };
+		01542B441B564CF70015446B /* SearchRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchRecord.m; sourceTree = "<group>"; };
+		3198C678CEA281967F49BF04 /* Pods-iStyle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iStyle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iStyle/Pods-iStyle.debug.xcconfig"; sourceTree = "<group>"; };
+		3BDEF591204C924AA8400D72 /* libPods-iStyle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iStyle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		615142C0A65FAEB816AF6257 /* Pods-iStyle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iStyle.release.xcconfig"; path = "Pods/Target Support Files/Pods-iStyle/Pods-iStyle.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82E9CFF7A224CBF6E1C596F2 /* libPods-iStyle.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +79,8 @@
 				01542AFA1B53C4220015446B /* iStyle */,
 				01542B141B53C4220015446B /* iStyleTests */,
 				01542AF91B53C4220015446B /* Products */,
+				09C36815889C4A190B0B9D8A /* Pods */,
+				CF7760C0DC6FC982971A12DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,12 +98,17 @@
 			children = (
 				01542AFF1B53C4220015446B /* AppDelegate.h */,
 				01542B001B53C4220015446B /* AppDelegate.m */,
-				01542B021B53C4220015446B /* ViewController.h */,
-				01542B031B53C4220015446B /* ViewController.m */,
-				01542B051B53C4220015446B /* Main.storyboard */,
 				01542B081B53C4220015446B /* Images.xcassets */,
 				01542B0A1B53C4220015446B /* LaunchScreen.xib */,
 				01542AFB1B53C4220015446B /* Supporting Files */,
+				01542B211B53C5EC0015446B /* SearchViewController.h */,
+				01542B221B53C5EC0015446B /* SearchViewController.m */,
+				01542B231B53C5EC0015446B /* SearchViewController.xib */,
+				01542B3E1B5637880015446B /* ImageCell.h */,
+				01542B3F1B5637880015446B /* ImageCell.m */,
+				01542B401B5637880015446B /* ImageCell.xib */,
+				01542B431B564CF70015446B /* SearchRecord.h */,
+				01542B441B564CF70015446B /* SearchRecord.m */,
 			);
 			path = iStyle;
 			sourceTree = "<group>";
@@ -119,6 +139,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		09C36815889C4A190B0B9D8A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3198C678CEA281967F49BF04 /* Pods-iStyle.debug.xcconfig */,
+				615142C0A65FAEB816AF6257 /* Pods-iStyle.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CF7760C0DC6FC982971A12DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BDEF591204C924AA8400D72 /* libPods-iStyle.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +163,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01542B1B1B53C4220015446B /* Build configuration list for PBXNativeTarget "iStyle" */;
 			buildPhases = (
+				7FF7B47B5C4F127CBDE444D6 /* Check Pods Manifest.lock */,
 				01542AF41B53C4220015446B /* Sources */,
 				01542AF51B53C4220015446B /* Frameworks */,
 				01542AF61B53C4220015446B /* Resources */,
+				F5DAFB18AFBE5C56CD28B384 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,9 +238,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01542B071B53C4220015446B /* Main.storyboard in Resources */,
 				01542B0C1B53C4220015446B /* LaunchScreen.xib in Resources */,
 				01542B091B53C4220015446B /* Images.xcassets in Resources */,
+				01542B421B5637880015446B /* ImageCell.xib in Resources */,
+				01542B251B53C5EC0015446B /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,13 +254,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7FF7B47B5C4F127CBDE444D6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F5DAFB18AFBE5C56CD28B384 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iStyle/Pods-iStyle-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		01542AF41B53C4220015446B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01542B041B53C4220015446B /* ViewController.m in Sources */,
+				01542B451B564CF70015446B /* SearchRecord.m in Sources */,
+				01542B411B5637880015446B /* ImageCell.m in Sources */,
 				01542B011B53C4220015446B /* AppDelegate.m in Sources */,
+				01542B241B53C5EC0015446B /* SearchViewController.m in Sources */,
 				01542AFE1B53C4220015446B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,14 +319,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		01542B051B53C4220015446B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				01542B061B53C4220015446B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		01542B0A1B53C4220015446B /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -345,9 +412,11 @@
 		};
 		01542B1C1B53C4220015446B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3198C678CEA281967F49BF04 /* Pods-iStyle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iStyle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -355,9 +424,11 @@
 		};
 		01542B1D1B53C4220015446B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 615142C0A65FAEB816AF6257 /* Pods-iStyle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iStyle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -416,6 +487,7 @@
 				01542B1D1B53C4220015446B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01542B1E1B53C4220015446B /* Build configuration list for PBXNativeTarget "iStyleTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +496,7 @@
 				01542B201B53C4220015446B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
