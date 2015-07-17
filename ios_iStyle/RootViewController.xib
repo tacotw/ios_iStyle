@@ -6,9 +6,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RootViewController">
             <connections>
+                <outlet property="backBtnItem" destination="74C-Xs-Dwg" id="dV2-kh-baA"/>
                 <outlet property="circleBarItem" destination="SfN-kX-42h" id="Wtz-JW-2fv"/>
                 <outlet property="collectionView" destination="TID-gP-EIp" id="0k0-1b-egI"/>
                 <outlet property="lineBarItem" destination="qQT-49-J6R" id="Yh6-e6-O81"/>
+                <outlet property="naviBar" destination="vAy-sf-FHu" id="Bt7-37-y2T"/>
                 <outlet property="stackBarItem" destination="cLF-jR-pdU" id="vZg-yb-BcJ"/>
                 <outlet property="tabBar" destination="TGG-of-RAw" id="Pgp-Z2-IEM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -25,7 +27,13 @@
                         <constraint firstAttribute="height" constant="60" id="s2R-u3-43E"/>
                     </constraints>
                     <items>
-                        <navigationItem title="Title" id="zOq-OV-UqO"/>
+                        <navigationItem title="Title" id="zOq-OV-UqO">
+                            <barButtonItem key="rightBarButtonItem" title="back" id="74C-Xs-Dwg">
+                                <connections>
+                                    <action selector="dismiss:" destination="-1" id="dKK-Nq-vzp"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
                     </items>
                 </navigationBar>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="TID-gP-EIp">
