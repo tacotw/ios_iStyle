@@ -62,7 +62,6 @@
         //CGFloat scale = 1 - delta / (self.collectionView.frame.size.width + self.itemSize.width);
         CGFloat scale = 1 - delta / (self.collectionView.frame.size.height + self.itemSize.height);
         
-        NSLog(@"%f",scale);
         attrs.transform = CGAffineTransformMakeScale(scale, scale);
         //attrs.transform3D = CATransform3DMakeRotation(scale * M_PI_4, 0, 1, 1);
     }

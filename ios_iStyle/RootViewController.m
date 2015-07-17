@@ -23,6 +23,8 @@
 
 @interface RootViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UITabBarDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UINavigationBar *naviBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backBtnItem;
 @property (nonatomic, strong) NSMutableArray *photos;
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 @property (weak, nonatomic) IBOutlet UITabBarItem *lineBarItem;
@@ -38,39 +40,15 @@ static NSString *const ID = @"image";
 {
     if (!_photos) {
         self.photos = [[NSMutableArray alloc] init];
-        // Photos
-        //        photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"photo5" ofType:@"jpg"]]];
-        //        photo.caption = @"White Tower";
-        //        [self.photos addObject:photo];
-        //        photo = [MWPhoto photoWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"photo2" ofType:@"jpg"]]];
-        //        photo.caption = @"The London Eye is a giant Ferris wheel situated on the banks of the River Thames, in London, England.";
-        //        [self.photos addObject:photo];
-        //        photo = [MWPhoto photoWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"photo3" ofType:@"jpg"]]];
-        //        photo.caption = @"York Floods";
-        //        [self.photos addObject:photo];
-        //        photo = [MWPhoto photoWithImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"photo4" ofType:@"jpg"]]];
-        //        photo.caption = @"Campervan";
-        //        [self.photos addObject:photo];
-        
-        /*
-        ImageCreator *imgCreator = [[ImageCreator alloc] init];
-        [imgCreator createImage:@"http://farm4.static.flickr.com/3567/3523321514_371d9ac42f_b.jpg" withFileName:@"a:a" ofType:@"jpg"];
-        [imgCreator createImage:@"http://farm4.static.flickr.com/3629/3339128908_7aecabc34b_b.jpg" withFileName:@"b:b" ofType:@"jpg"];
-        [imgCreator createImage:@"http://farm4.static.flickr.com/3364/3338617424_7ff836d55f_b.jpg" withFileName:@"c:c" ofType:@"jpg"];
-        [imgCreator createImage:@"http://farm4.static.flickr.com/3590/3329114220_5fbc5bc92b_b.jpg" withFileName:@"d:d" ofType:@"jpg"];
-        [imgCreator createImage:@"http://farm3.static.flickr.com/2449/4052876281_6e068ac860_b.jpg" withFileName:@"e:e" ofType:@"jpg"];
-         */
         NSFileManager *fm=[NSFileManager defaultManager];
         
         //Document Path
         NSArray *docDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentPath = [NSString stringWithFormat:@"%@/screenshot/",[docDirectory objectAtIndex:0]];
-        NSLog(@"%@", documentPath);
         
         NSArray *info=[fm contentsOfDirectoryAtPath:documentPath error:nil];
         for (NSString *path in info) {
             NSString *imgPath = [NSString stringWithFormat:@"file://%@/%@", documentPath, path];
-            NSLog(@"addObject imgPath:%@",imgPath);
             MWPhoto *photo = [MWPhoto photoWithURL:[NSURL URLWithString:imgPath]];
              photo.caption = path;
             [self.photos addObject:photo];
@@ -159,6 +137,9 @@ static NSString *const ID = @"image";
     
     // 直接将cell删除
     [self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
+}
+- (IBAction)dismiss:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
